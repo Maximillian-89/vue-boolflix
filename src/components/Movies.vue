@@ -1,7 +1,7 @@
 <template>
     <ul>
         <li v-for="(movie, index) in movies" :key="index">
-            <MovieCard/>
+            <MovieCard :movie='movie'/>
         </li>
     </ul>
 </template>

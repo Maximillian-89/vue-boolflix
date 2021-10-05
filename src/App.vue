@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header @search='searchElm'/>
     <main>
-      <Movies>
+      <Movies :textImput="resetSearch">
         <MovieCard/>
       </Movies>
     </main>
@@ -12,7 +12,7 @@
 <script>
 import Header from './components/Header.vue';
 import MovieCard from './components/MovieCard.vue';
-import Movies from './components/Movies.vue'
+import Movies from './components/Movies.vue';
 
 export default {
   name: 'App',
@@ -20,7 +20,20 @@ export default {
     Header,
     MovieCard,
     Movies
+  },
+
+  data() {
+    return {
+      resetSearch: ''
+    }
+  },
+  
+  methods: {
+    searchElm(elm) {
+      this.resetSearch = elm;
+    }
   }
+
 }
 </script>
 
