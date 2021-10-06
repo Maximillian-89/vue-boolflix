@@ -29,20 +29,21 @@ import LangFlag from 'vue-lang-code-flags';
 </script>
 
 <style lang="scss" scoped>
+
     .movie {
-        .details {
-            opacity: 0;
-        }
+        position: relative;
+    }
+    .movie .details {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        background: red;
+        bottom: 0;
+        width: 100%;
+    }
 
-        .poster img {
-            height: 100%;
-
-            &:hover {
-                .details {
-                    opacity: 1;
-                }
-            }
-        }
+    .movie:hover .details {
+        opacity: 1;
     }
 
 </style>
