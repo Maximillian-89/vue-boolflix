@@ -8,7 +8,7 @@
 
 <script>
 import MovieCard from './MovieCard.vue';
-import axios from 'axios';
+// import axios from 'axios';
 
     export default {
         name: 'Movies',
@@ -21,32 +21,32 @@ import axios from 'axios';
             MovieCard
         },
 
-        data() {
-            return {
-                movies: []
-            }
-        },
+        // data() {
+        //     return {
+        //         movies: []
+        //     }
+        // },
 
-        updated() {
-            axios
-            .get('https://api.themoviedb.org/3/search/movie', {
+        // updated() {
+        //     axios
+        //     .get('https://api.themoviedb.org/3/search/movie', {
 
-                params: {
-                    api_key: '538231174889c8f4d14c6638c8c73e43',
-                    query: this.textImput,
-                    language: 'it-IT'
-                }
-            })
+        //         params: {
+        //             api_key: '538231174889c8f4d14c6638c8c73e43',
+        //             query: this.textImput,
+        //             language: 'it-IT'
+        //         }
+        //     })
 
-            .then( (recive) => {
+        //     .then( (recive) => {
 
-                if( this.textImput == '' ) {
-                    this.textImput = [];
-                } else {
-                    this.movies = recive.data.results;
-                }
-            } );
-        }
+        //         if( this.textImput == '' ) {
+        //             this.textImput = [];
+        //         } else {
+        //             this.movies = recive.data.results;
+        //         }
+        //     } );
+        // }
     }
 </script>
 
