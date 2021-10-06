@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search='searchElm'/>
     <main>
-      <Movies :textImput="movies">
+      <Movies :movies='movies'>
         <MovieCard/>
       </Movies>
     </main>
@@ -17,10 +17,6 @@ import axios from 'axios';
 
 export default {
   name: 'App',
-
-  props: {
-    textImput: String
-  },
   
   components: {
     Header,
@@ -67,5 +63,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import './assets/style/common.scss';
 
 </style>

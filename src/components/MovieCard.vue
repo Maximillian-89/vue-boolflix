@@ -1,29 +1,47 @@
 <template>
-    <ol>
-        <li>Titolo: {{movie.title}}</li>
-        <li>Titolo Originale: {{movie.original_title}}</li>
-        <li>Lingua Originale: {{movie.original_language}}</li>
-        <li>Voto: {{movie.vote_average}}</li>
-    </ol>
+    <div class="movie">
+        <div class="poster">
+            <img :src="`http://image.tmdb.org/t/p/w300/${movie.poster_path}`" :alt="movie.title">
+        </div>
+        <div class="details">
+            <h2>Titolo: {{movie.title}}</h2>
+            <h3>Titolo Originale: {{movie.original_title}}</h3>
+            <lang-flag :iso='movie.original_language'/>
+            <div>Voto: {{movie.vote_average}}</div>
+        </div>
+    </div>
 </template>
 
 <script>
+import LangFlag from 'vue-lang-code-flags';
+
     export default {
         name: 'MovieCard',
 
         props: {
             movie: Object
+        },
+        
+        components: {
+            LangFlag,
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    ul {
-        display: flex;
-        flex-direction: column;
+    .movie {
+        .details {
+            opacity: 0;
+        }
 
-        li {
+        .poster img {
+            height: 100%;
 
+            &:hover {
+                .details {
+                    opacity: 1;
+                }
+            }
         }
     }
 
