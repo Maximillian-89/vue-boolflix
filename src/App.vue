@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search='searchElm'/>
     <main>
-      <Movies :movies='movies'>
+      <Movies :textImput="movies">
         <MovieCard/>
       </Movies>
     </main>
@@ -17,6 +17,11 @@ import axios from 'axios';
 
 export default {
   name: 'App',
+
+  props: {
+    textImput: String
+  },
+  
   components: {
     Header,
     MovieCard,

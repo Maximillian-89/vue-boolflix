@@ -13,9 +13,9 @@ import MovieCard from './MovieCard.vue';
     export default {
         name: 'Movies',
 
-        props: {
-            textImput: String
-        },
+        // props: {
+        //     textImput: String
+        // },
 
         components: {
             MovieCard
