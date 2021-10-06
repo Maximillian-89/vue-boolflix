@@ -2,14 +2,9 @@
     <header>
         <nav>
             <div class="nav-left">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
             </div>
             <div class="nav-right">
                 <ul>
