@@ -2,14 +2,14 @@
     <div class="movies">
         <h1>Films</h1>
         <ul>
-            <li class="card-container" v-for="(movie, index) in movies" :key="index">
+            <li class="card-container" v-for="movie in movies" :key="movie.id">
                 <MovieCard :movie='movie'/>
             </li>
         </ul>
         <h1>Serie TV</h1>
         <ul>
-            <li class="card-container" v-for="(serie, index) in series" :key="index">
-                <MovieCard :movie='movie'/>
+            <li class="card-container" v-for="serie in series" :key="serie.id">
+                <MovieCard :movie='serie'/>
             </li>
         </ul>
     </div>

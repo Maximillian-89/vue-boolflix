@@ -61,7 +61,7 @@ export default {
       })
 
       .then( (recive) => {
-        this.serieTv = recive.data.results;
+        this.seriesTv = recive.data.results;
       })
       
     }

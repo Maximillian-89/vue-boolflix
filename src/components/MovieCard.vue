@@ -43,7 +43,6 @@ import LangFlag from 'vue-lang-code-flags';
 
         .poster {
             display: flex;
-            // margin: 20px 15px;
             height: 100%;
         }
         .poster img {
