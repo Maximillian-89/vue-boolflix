@@ -5,15 +5,14 @@
         </div>
         <div class="details">
             <ul>
-                <li><h2>Titolo: {{movie.title}}</h2></li>
-                <li><h3>Titolo Originale: {{movie.original_title}}</h3></li>
-                <li><lang-flag :iso='movie.original_language'/></li>
-                <li><div>Voto: {{movie.vote_average}}</div></li>
+                <li>Titolo:<h2> {{movie.title}}</h2></li>
+                <li>Titolo Originale:<h3> {{movie.original_title}}</h3></li>
+                <li>Lingua: <lang-flag :iso='movie.original_language'/></li>
+                <li>
+                    Voto:
+                    <div v-for="(star, index) in Math.floor(movie.vote_average / 2)" :key="index" class="fas fa-star"></div>
+                </li>
             </ul>
-            <!-- <h2>Titolo: {{movie.title}}</h2>
-            <h3>Titolo Originale: {{movie.original_title}}</h3>
-            <lang-flag :iso='movie.original_language'/>
-            <div>Voto: {{movie.vote_average}}</div> -->
         </div>
     </div>
 </template>
@@ -40,17 +39,16 @@ import LangFlag from 'vue-lang-code-flags';
     .movie {
         position: relative;
         height: 100%;
-        display: flex;
         overflow: hidden;
 
         .poster {
             display: flex;
             // margin: 20px 15px;
             height: 100%;
-            width: calc(100% / 5);
         }
         .poster img {
             object-fit: cover;
+            width: 100%;
         }
     }
 
@@ -63,6 +61,10 @@ import LangFlag from 'vue-lang-code-flags';
         left: 0;
         right: 0;
         height: 100%;
+
+        ul li {
+            padding: .80rem 3rem;
+        }
     }
 
     .movie:hover .details {
@@ -72,9 +74,24 @@ import LangFlag from 'vue-lang-code-flags';
     .details ul {
         list-style: none;
 
+        li {
+            color: #fff;
+                display: flex;
+            align-items: center;
+        }
+
         li h2, h3, div {
             color: #fff;
+            margin-left: .625rem;
         }
+
+        li:last-child div {
+            margin: 0;
+        }
+    }
+
+    .fas.fa-star {
+        color: gold;
     }
 
 </style>

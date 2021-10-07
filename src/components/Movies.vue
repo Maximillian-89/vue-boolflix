@@ -1,14 +1,22 @@
 <template>
-    <ul>
-        <li v-for="(movie, index) in movies" :key="index">
-            <MovieCard :movie='movie'/>
-        </li>
-    </ul>
+    <div class="movies">
+        <h1>Films</h1>
+        <ul>
+            <li class="card-container" v-for="(movie, index) in movies" :key="index">
+                <MovieCard :movie='movie'/>
+            </li>
+        </ul>
+        <h1>Serie TV</h1>
+        <ul>
+            <!-- <li class="card-container" v-for="(movie, index) in movies" :key="index">
+                <MovieCard :movie='movie'/>
+            </li> -->
+        </ul>
+    </div>
 </template>
 
 <script>
 import MovieCard from './MovieCard.vue';
-// import axios from 'axios';
 
     export default {
         name: 'Movies',
@@ -20,40 +28,25 @@ import MovieCard from './MovieCard.vue';
         components: {
             MovieCard
         },
-
-        // data() {
-        //     return {
-        //         movies: []
-        //     }
-        // },
-
-        // updated() {
-        //     axios
-        //     .get('https://api.themoviedb.org/3/search/movie', {
-
-        //         params: {
-        //             api_key: '538231174889c8f4d14c6638c8c73e43',
-        //             query: this.textImput,
-        //             language: 'it-IT'
-        //         }
-        //     })
-
-        //     .then( (recive) => {
-
-        //         if( this.textImput == '' ) {
-        //             this.textImput = [];
-        //         } else {
-        //             this.movies = recive.data.results;
-        //         }
-        //     } );
-        // }
     }
 </script>
 
 <style lang="scss" scoped>
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
+
+    .movies {
+        h1 {
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .card-container {
+            width: calc(100% / 5 - 1.25rem);
+            margin: 1.5625rem .625rem;
+        }
     }
 </style>
