@@ -64,6 +64,6 @@ export default {
 
 <style lang="scss" scoped>
 @import './assets/style/common.scss';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 </style>
