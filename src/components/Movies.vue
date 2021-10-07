@@ -8,9 +8,9 @@
         </ul>
         <h1>Serie TV</h1>
         <ul>
-            <!-- <li class="card-container" v-for="(movie, index) in movies" :key="index">
+            <li class="card-container" v-for="(serie, index) in series" :key="index">
                 <MovieCard :movie='movie'/>
-            </li> -->
+            </li>
         </ul>
     </div>
 </template>
@@ -21,9 +21,7 @@ import MovieCard from './MovieCard.vue';
     export default {
         name: 'Movies',
 
-        props: {
-            movies: Array
-        },
+        props: ['movies', 'series'],
 
         components: {
             MovieCard

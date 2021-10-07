@@ -5,8 +5,8 @@
         </div>
         <div class="details">
             <ul>
-                <li>Titolo:<h2> {{movie.title}}</h2></li>
-                <li>Titolo Originale:<h3> {{movie.original_title}}</h3></li>
+                <li>Titolo:<h2> {{movie.title ? movie.title : movie.name}}</h2></li>
+                <li>Titolo Originale:<h3> {{movie.original_title ? movie.original_title : movie.original_name}}</h3></li>
                 <li>Lingua: <lang-flag :iso='movie.original_language'/></li>
                 <li>
                     Voto:
