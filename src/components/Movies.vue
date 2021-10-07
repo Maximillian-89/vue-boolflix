@@ -51,5 +51,9 @@ import MovieCard from './MovieCard.vue';
 </script>
 
 <style lang="scss" scoped>
-
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+    }
 </style>
